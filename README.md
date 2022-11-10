@@ -1,9 +1,5 @@
 API For PIKKC Directory
 ---
-How to run
-```
-yarn dev
-```
 
 Database Management
 - `yarn db:create` untuk membuat database
@@ -11,5 +7,10 @@ Database Management
 - `yarn db:migrate` digunakan untuk menjalankan database migration
 - `yarn db:seed` digunakan untuk melakukan seeding
 - `yarn db:rollback` digunakan untuk membatalkan migrasi terakhir
+
+Run Server
+```
+yarn dev
+```
 
 
