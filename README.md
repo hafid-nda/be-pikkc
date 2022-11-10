@@ -3,6 +3,7 @@ API For PIKKC Directory
 How to run
 ```
 yarn dev
+```
 
 Database Management
 `yarn db:create` untuk membuat database
