@@ -14,8 +14,8 @@ yarn dev
 ```
 
 ## User Super Admin  
-email    : superadmin@gmail.com 
-password : superadmin 
+- email    : superadmin@gmail.com 
+- password : superadmin 
 
 
 
