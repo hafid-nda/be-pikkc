@@ -6,7 +6,7 @@ module.exports = {
   development: {
     username: DB_USERNAME,
     password: DB_PASSWORD,
-    database: `${DB_NAME}_development`,
+    database: `${DB_NAME}_production`,
     host: DB_HOST,
     dialect: "mysql",
   },
