@@ -1,7 +1,7 @@
 module.exports = {
   onLost(req, res) {
     res.status(404).json({
-      status: "FAIL",
+      status: "Failed",
       message: "Route not found!",
     });
   },
