@@ -94,7 +94,7 @@ module.exports = {
 
     const role = user.role
     role2 = role.charAt(0).toUpperCase() + role.slice(1);
-    res.status(200).json({
+    res.status(201).json({
       status: true,
       message: `Berhasil Login Sebagai ${role2} `,
       data: {
