@@ -28,7 +28,7 @@ module.exports = {
         directoryService
             .create(req.body)
             .then((directory) => {
-                res.status(201).json({
+                res.status(200).json({
                     status: "OK",
                     message: "Create Directory Success",
                     data: directory,
