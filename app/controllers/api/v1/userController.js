@@ -46,7 +46,7 @@ module.exports = {
       .then((user) => {
         res.status(201).json({
           status: true,
-          message: `Create Member Succes`,
+          message: `Create User Success`,
           data: {
             id: user.id,
             email: user.email,
