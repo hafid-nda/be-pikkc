@@ -1,5 +1,4 @@
 const express = require("express");
-const res = require("express/lib/response");
 const controllers = require("../app/controllers");
 const apiRouter = express.Router();
 
@@ -52,6 +51,7 @@ apiRouter.post(
   controllers.api.v1.userController.authorize,
   controllers.api.v1.userController.isAdminOrSuperAdmin,
   controllers.api.v1.directoryController.create
+  // upload.single('assets')
 );
 
 // read one directory 
