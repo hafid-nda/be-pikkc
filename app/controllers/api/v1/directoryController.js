@@ -1,4 +1,5 @@
 const directoryService = require("../../../services/directoryService");
+const uploadFile = require('../../../middleware/upload');
 
 module.exports = {
     list(req, res) {
@@ -22,15 +23,17 @@ module.exports = {
             });
     },
 
-    create(req, res) {
-        console.log(req.body);
+    async create(req, res) {
+        await uploadFile(req, res);
+        console.log(req.file);
+        console.log(req.file.filename);
         req.body.createdBy = req.user.id;
         directoryService
-            .create(req.body)
+            .create({...req.body,file:req.file.filename})
             .then((directory) => {
                 res.status(200).json({
                     status: "OK",
-                    message: "Create Directory Success",
+                    message: "Create Directory Success",    
                     data: directory,
                 });
             })
