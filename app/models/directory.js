@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     nama: DataTypes.STRING,
     judulJurnal: DataTypes.STRING,
     tahunTerbit: DataTypes.INTEGER,
+    file: DataTypes.STRING,
     isDeleted: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
