@@ -17,6 +17,9 @@ module.exports = {
       tahunTerbit: {
         type: Sequelize.INTEGER
       },
+      file: {
+        type: Sequelize.STRING
+      },
       isDeleted: {
         type: Sequelize.BOOLEAN
       },
