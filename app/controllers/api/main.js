@@ -1,5 +1,5 @@
 module.exports = {
-  onLost(req, res) {
+  onSuccess(req, res) {
     res.status(200).json({
       status: "Success",
       message: "Hello World!",
