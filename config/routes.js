@@ -88,7 +88,7 @@ apiRouter.get("/api/v1/errors", () => {
   throw new Error("The Industrial Revolution and its consequences have been a disaster for the human race.");
 });
 
-apiRouter.use(controllers.api.main.onLost);
+apiRouter.use(controllers.api.main.onSuccess);
 apiRouter.use(controllers.api.main.onError);
 
 module.exports = apiRouter;
