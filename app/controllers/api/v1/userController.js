@@ -111,7 +111,7 @@ module.exports = {
   async whoAmI(req, res) {
     res.status(200).json({
       status: true,
-      message: `Get Current User By Token Succes`,
+      message: `Get Current User By Token Success`,
       data: req.user
     }
     );
