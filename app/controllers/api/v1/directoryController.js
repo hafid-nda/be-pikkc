@@ -24,25 +24,35 @@ module.exports = {
     },
 
     async create(req, res) {
-        await uploadFile(req, res);
-        console.log(req.file);
-        console.log(req.file.filename);
-        req.body.createdBy = req.user.id;
-        directoryService
-            .create({...req.body,file:req.file.filename})
-            .then((directory) => {
-                res.status(200).json({
-                    status: "OK",
-                    message: "Create Directory Success",    
-                    data: directory,
+        try {
+            await uploadFile(req, res)
+            console.log(req.file);
+            console.log(req.file.filename);
+            req.body.createdBy = req.user.id;
+            directoryService
+                .create({...req.body,file:req.file.filename})
+                .then((directory) => {
+                    res.status(200).json({
+                        status: "OK",
+                        message: "Create Directory Success",    
+                        data: directory,
+                    });
+                })
+                .catch((err) => {
+                    res.status(422).json({
+                        status: "FAIL",
+                        message: err.message,
+                    });
                 });
-            })
-            .catch((err) => {
-                res.status(422).json({
-                    status: "FAIL",
-                    message: err.message,
+        } catch (error) {
+               if(error.message === "FILE_EXTENSION") {
+                return res.status(500).send({
+                  status: 500,
+                  message: "File must be PDF, Doc or Docx",
+                  data: [],
                 });
-            });
+              }
+        }
     },
 
     update(req, res) {
