@@ -7,6 +7,7 @@ Database Management
 - `yarn db:migrate` untuk menjalankan database migration
 - `yarn db:seed` untuk melakukan seeding
 - `yarn db:rollback` untuk membatalkan migrasi terakhir
+- `yarn db:rollback:all` untuk membatalkan semua migrasi
 
 Run Server
 ```
