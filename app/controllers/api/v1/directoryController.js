@@ -45,9 +45,9 @@ module.exports = {
                     });
                 });
         } catch (error) {
-               if(error.message === "FILE_EXTENSION") {
+            if(error.message === "FILE_EXTENSION") {
                 return res.status(500).send({
-                  status: 500,
+                  status: "Error",
                   message: "File must be PDF, Doc or Docx",
                   data: [],
                 });
