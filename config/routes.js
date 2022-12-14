@@ -2,6 +2,8 @@ const express = require("express");
 const controllers = require("../app/controllers");
 const apiRouter = express.Router();
 
+/* ====== USER ROUTES ======  */
+
 // login as superadmin, admin, or member
 apiRouter.post(
   "/api/v1/login",
@@ -15,7 +17,6 @@ apiRouter.get(
   controllers.api.v1.userController.isAdminOrSuperAdmin,
   controllers.api.v1.userController.whoAmI
 );
-
 
 //destroy users from db
 apiRouter.delete(
@@ -82,6 +83,51 @@ apiRouter.delete(
   controllers.api.v1.userController.authorize,
   controllers.api.v1.userController.isSuperAdmin,
   controllers.api.v1.directoryController.makeDirectoryDestroy
+);
+
+/* ====== RESEARCHER ROUTES ======  */
+apiRouter.get(
+  "/api/v1/researchers",
+  controllers.api.v1.researcherController.list
+);
+
+//create researcher
+apiRouter.post(
+  "/api/v1/researcher",
+  controllers.api.v1.userController.authorize,
+  controllers.api.v1.userController.isAdminOrSuperAdmin,
+  controllers.api.v1.researcherController.create
+  // upload.single('assets')
+);
+
+// read one directory 
+apiRouter.get(
+  "/api/v1/researchers/:id",
+  controllers.api.v1.researcherController.show
+);
+
+// update directory by admin or superadmin
+apiRouter.put(
+  "/api/v1/researchers/:id",
+  controllers.api.v1.userController.authorize,
+  controllers.api.v1.userController.isAdminOrSuperAdmin,
+  controllers.api.v1.researcherController.update
+);
+
+// delete directory by admin or superadmin
+apiRouter.delete(
+  "/api/v1/researchers/:id",
+  controllers.api.v1.userController.authorize,
+  controllers.api.v1.userController.isAdminOrSuperAdmin,
+  controllers.api.v1.researcherController.makeResearcherDeleted
+);
+
+// destroy directory by superadmin
+apiRouter.delete(
+  "/api/v1/resdestroy/:id",
+  controllers.api.v1.userController.authorize,
+  controllers.api.v1.userController.isSuperAdmin,
+  controllers.api.v1.researcherController.makeResearcherDestroy
 );
 
 apiRouter.get("/api/v1/errors", () => {

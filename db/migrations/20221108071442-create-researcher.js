@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       jenisKelamin: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       isDeleted: {
         type: Sequelize.BOOLEAN

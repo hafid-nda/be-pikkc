@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Peneliti.init({
+  Researcher.init({
     namaPeneliti: {
       type: DataTypes.STRING,
       allowNull: false,

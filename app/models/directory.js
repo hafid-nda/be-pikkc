@@ -14,10 +14,22 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Directory.init({
-    nama: DataTypes.STRING,
-    judulJurnal: DataTypes.STRING,
-    tahunTerbit: DataTypes.INTEGER,
-    file: DataTypes.STRING,
+    nama: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    judulJurnal: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    tahunTerbit: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    file: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     isDeleted: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,

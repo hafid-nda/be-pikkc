@@ -2,7 +2,7 @@ const multer = require("multer");
 const util = require("util");
 const path = require("path");
 
-const maxSize = 20 * 1024 * 1024;
+const maxSize = 15 * 1024 * 1024;
 
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -25,7 +25,7 @@ let uploadFile = multer({
       cb(null, true); 
     } else {
       cb(null, false);
-      return cb(new Error("File extension must be PDF or Doc"));
+      return cb(new Error("file_extension"));
     }
   },
 }).single("file");  
